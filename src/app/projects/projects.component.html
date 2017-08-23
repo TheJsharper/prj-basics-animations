@@ -41,6 +41,6 @@
       [ngClass]="{ inactive: prj.status === 'inactive'}"
       (statusUpdated)="onStatusUpdated($event, i)"
       (projectDeleted)="onProjectDeleted(i)"
-      (click)="markedPrjIndex = i"></app-project>
+      (click)="markedPrjIndex = i" @itemState></app-project>
   </div>
 </div>

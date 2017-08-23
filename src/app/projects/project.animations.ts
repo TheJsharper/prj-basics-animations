@@ -14,3 +14,18 @@ export const markedTrigger: AnimationTriggerMetadata = trigger('markedState',
 
   ]);
 
+export class  ItemStateTrigger{
+  static get itemState():AnimationTriggerMetadata{
+    return trigger('itemState',[
+          transition('void => *',[
+              style({ opacity: 0, transform:'translateX(-100%)'}),
+            animate('500ms ease-out', style({opacity:1, transform: 'translateX(0)'}))
+          ]),
+      transition('* => void',[
+        style({ opacity: 1, transform:'translateX(0)'}),
+        animate('500ms ease-in', style({opacity:0, transform: 'translateX(-100%)'}))
+      ])
+    ]);
+  }
+}
+
