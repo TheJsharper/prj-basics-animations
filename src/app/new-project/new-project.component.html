@@ -36,9 +36,9 @@
   <button
     type="submit"
     [disabled]="!f.valid"
-    class="btn btn-success">Create Project</button>
+    class="btn btn-success" [@activeBtnState]="f.valid?'active':'inactive' " >Create Project</button>
   <button
     type="button"
     class="btn btn-danger"
-    (click)="onCancel()">Cancel</button>
+    (click)="onCancel()" >Cancel</button>
 </form>

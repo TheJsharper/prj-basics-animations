@@ -21,7 +21,7 @@
     <app-new-project
       *ngIf="createNew"
       (projectCreated)="onProjectCreated($event)"
-      (creationCancelled)="createNew = false"></app-new-project>
+      (creationCancelled)="createNew = false" @slideState></app-new-project>
   </div>
 </div>
 <hr>
@@ -35,12 +35,15 @@
         *ngIf="progress != 'finished'"></div>
     </div>
     <app-project
-      *ngFor="let prj of projects; let i = index"
+      *ngFor="let prj of displayProjs; let i = index"
       [project]="prj"
       [@markedState]="markedPrjIndex ==i ? 'marked': 'default'"
+      (@itemState.done)="onDone($event, i)"
       [ngClass]="{ inactive: prj.status === 'inactive'}"
       (statusUpdated)="onStatusUpdated($event, i)"
       (projectDeleted)="onProjectDeleted(i)"
-      (click)="markedPrjIndex = i" @itemState></app-project>
+
+      (click)="markedPrjIndex = i" @itemState  ></app-project>
+    <!--[@itemState]="createNew? 'slidDown':'slidup'"-->
   </div>
 </div>
