@@ -43,11 +43,11 @@ export class ItemStateTrigger {
       ]),
       transition('slidup => slidDown', [
         style({transform: 'translateY(-100%)'}),
-        animate('300ms', style({transform: 'translateY(0)'}))
+        animate('2s ease-out', style({transform: 'translateY(0)'}))
       ]),
       transition('slidDown => slidup', [
         style({transform: 'translateY(0)'}),
-        animate('300ms', style({transform: 'translateY(-100%)'}))
+        animate('2s ease-out', style({transform: 'translateY(-70%)'}))
       ]),
     ]);
   }

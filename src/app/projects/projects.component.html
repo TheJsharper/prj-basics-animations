@@ -25,8 +25,8 @@
   </div>
 </div>
 <hr>
-<div class="row">
-  <div class="col-xs-12">
+<div class="row"  >
+  <div class="col-xs-12"  >
     <div
       class="loading-bar"
       *ngIf="!projects">
@@ -43,7 +43,7 @@
       (statusUpdated)="onStatusUpdated($event, i)"
       (projectDeleted)="onProjectDeleted(i)"
 
-      (click)="markedPrjIndex = i" @itemState  ></app-project>
-    <!--[@itemState]="createNew? 'slidDown':'slidup'"-->
+      (click)="markedPrjIndex = i" [@itemState]="createNew? 'slidDown':'slidup'"  style="overflow: hidden" ></app-project>
+    <!---->
   </div>
 </div>
