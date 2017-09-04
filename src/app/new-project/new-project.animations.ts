@@ -1,4 +1,4 @@
-import {AnimationTriggerMetadata, style, animate, transition, trigger, state, group} from "@angular/animations";
+import {AnimationTriggerMetadata, style, animate, transition, trigger, state, group, query} from "@angular/animations";
 
 export class NewProjectAnimations {
   static get activeBtnStateTrigger(): AnimationTriggerMetadata {
@@ -21,6 +21,16 @@ export class NewProjectAnimations {
         animate(300, style({transform: 'scale(1)'}))
       ])
 
+    ]);
+  }
+  static  get formStateTrigger():AnimationTriggerMetadata{
+    return trigger('formState',[
+      transition('* => *',[
+        query('input.ng-invalid:focus',[
+          animate(200, style({backgroundColor:'red'})),
+          animate(200)
+        ],{optional:true})
+      ])
     ]);
   }
 }

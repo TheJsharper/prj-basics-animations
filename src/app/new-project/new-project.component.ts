@@ -8,7 +8,7 @@ import {NewProjectAnimations} from "./new-project.animations";
   selector: 'app-new-project',
   templateUrl: './new-project.component.html',
   styleUrls: ['./new-project.component.css'],
-  animations:[NewProjectAnimations.activeBtnStateTrigger]
+  animations:[NewProjectAnimations.activeBtnStateTrigger, NewProjectAnimations.formStateTrigger]
 })
 export class NewProjectComponent implements OnInit {
   @Output() creationCancelled = new EventEmitter<void>();
